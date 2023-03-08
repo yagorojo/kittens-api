@@ -1,0 +1,8 @@
+<%= link_to 'Add kitten', new_kitten_path %>
+
+<% @kittens.each do |kitten| %>
+  <div>
+    <%= link_to kitten.name, kitten %>
+    <%= link_to 'Delete', kitten_path(kitten.id), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+  </div>
+<% end %>
